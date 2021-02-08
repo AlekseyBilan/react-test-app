@@ -1,4 +1,5 @@
 import './User.css';
+import Button from '../Button';
 import comments from '../../comments';
 import ArticleList from '../ArticleList';
 
@@ -9,8 +10,9 @@ function User(props) {
             <h2><small>Name:</small> {props.fullName}, {props.userName}</h2>
             <h3><small>Email:</small> {props.email}</h3>
             <ArticleList comments = {userComments}/>
-        </div>
-      );
+        <Button text="Click me!"/>
+    </div>  
+  );
 }
 
 export default User;
