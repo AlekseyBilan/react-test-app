@@ -2,7 +2,6 @@ import "./UserList.css";
 import User from "./User";
 
 function UserList(props) {
-  console.log("users  = ", props.users);
   const usersJsx = props.users.map((user) => {
     return (
       <User

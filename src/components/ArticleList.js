@@ -2,14 +2,6 @@
 import Article from './Article'
 
 function ArticleList(props) {
-    /*
-*  "postId": 3,
-    "id": 15,
-    "name": "debitis magnam hic odit aut ullam nostrum tenetur",
-    "email": "Maynard.Hodkiewicz@roberta.com",
-    "body": "nihil ut voluptates blanditiis autem odio dicta rerum\nquisquam saepe et est\nsunt quasi nemo laudantium deserunt\nmolestias tempora quo quia"
-* */
-    console.log('props = ', props);
     const comment = props.comments.map((comment) => {
         return (
             <Article
