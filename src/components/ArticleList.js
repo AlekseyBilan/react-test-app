@@ -17,24 +17,28 @@ class ArticleList extends React.Component {
     }
 
     render() {
-        const comment = this.props.comments.map((comment) => {
-            return (
-                <Article
-                    userid={comment.id}
-                    id={comment.postId}
-                    fullTitle={comment.name}
-                    userBody={comment.body}
-                    email={comment.email}
-                />
-            );
-        });
+        let comment = null;
+        if( this.state.isToggleOn ){
+            comment = this.props.comments.map((comment) => {
+                return (
+                    <Article
+                        userid={comment.id}
+                        id={comment.postId}
+                        fullTitle={comment.name}
+                        userBody={comment.body}
+                        email={comment.email}
+                    />
+                );
+            });
+        }
         return (
             <div>
                 <h2 className="title">Comments list</h2>
-                {this.state.isToggleOn ? comment.length > 0 ? comment : "There is no comments, yet" : ''}
-                <button className='btn' onClick={this.handleClick}>
-                    {this.state.isToggleOn ? 'HIDE' : 'SHOW'}
-                </button>
+                { (comment && comment.length > 0) ? comment : "There is no comments, yet"}
+                <Button text={this.state.isToggleOn ? 'HIDE' : 'SHOW'} clickHandler = {this.handleClick}/>
+                {/*<button className='btn' onClick={this.handleClick}>*/}
+                {/*    {this.state.isToggleOn ? 'HIDE' : 'SHOW'}*/}
+                {/*</button>*/}
             </div>
         );
     }
