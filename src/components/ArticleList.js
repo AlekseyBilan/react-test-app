@@ -18,6 +18,7 @@ class ArticleList extends React.Component {
 
     render() {
         let comment = null;
+        const btnText = this.state.isToggleOn ? 'HIDE' : 'SHOW';
         if( this.state.isToggleOn ){
             comment = this.props.comments.map((comment) => {
                 return (
@@ -31,14 +32,13 @@ class ArticleList extends React.Component {
                 );
             });
         }
+        const result = (comment && comment.length > 0) ? comment : "There is no comments, yet";
+
         return (
             <div>
                 <h2 className="title">Comments list</h2>
-                { (comment && comment.length > 0) ? comment : "There is no comments, yet"}
-                <Button text={this.state.isToggleOn ? 'HIDE' : 'SHOW'} clickHandler = {this.handleClick}/>
-                {/*<button className='btn' onClick={this.handleClick}>*/}
-                {/*    {this.state.isToggleOn ? 'HIDE' : 'SHOW'}*/}
-                {/*</button>*/}
+                { result }
+                <Button text={ btnText } clickHandler = {this.handleClick}/>
             </div>
         );
     }
