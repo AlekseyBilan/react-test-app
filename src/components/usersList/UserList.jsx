@@ -5,6 +5,7 @@ function UserList(props) {
   const usersJsx = props.users.map((user) => {
     return (
       <User
+        key={user.id}
         id={user.id}
         fullName={user.name}
         userName={user.username}
