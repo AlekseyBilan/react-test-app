@@ -10,7 +10,8 @@ class ArticleList extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick() {
+    handleClick(e) {
+        console.log('E = ', e);
         this.setState(state => ({
             isToggleOn: !state.isToggleOn
         }));

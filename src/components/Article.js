@@ -1,12 +1,37 @@
+import React from "react";
+import Button from "./Button";
 
-function Article(props) {
+class Article extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {isArticleShown: true};
+        // Эта привязка обязательна для работы `this` в колбэке.
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(e) {
+        console.log('Article E = ', e);
+        this.setState(state => ({
+            isArticleShown: !state.isArticleShown
+        }));
+    }
+
+    render() {
+        const btnText = this.state.isArticleShown ? 'Hide comment' : 'Show comment';
     return (
-        <article key={props.id} data-user-id={props.postId}>
-            <h2>{props.fullTitle}</h2>
-            <p>{props.userBody}</p>
-            <p>{props.email}</p>
+        <article key={this.props.id} data-user-id={this.props.postId}>
+            { this.state.isArticleShown ?
+                <>
+                    <h2>{this.props.fullTitle}</h2>
+                    <p>{this.props.userBody}</p>
+                    <p>{this.props.email}</p>
+                </>
+                : ''
+            }
+            <Button text={ btnText } clickHandler = {this.handleClick}/>
         </article>
     );
+    }
 }
 
 export default Article;

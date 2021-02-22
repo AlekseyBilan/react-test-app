@@ -2,9 +2,8 @@ import './Button.css';
 
 function Button(props) {
     function clickHandler(e) {
-        //e.preventDefault();
         console.log('По кнопке кликнули.', e);
-        props.clickHandler();
+        props.clickHandler(e);
     }
   return (
     <button className='btn' onClick={clickHandler}>
