@@ -18,3 +18,12 @@
 .icon-bg:hover {
     background: url(../facebook-square-brands.svg)no-repeat center / contain red;
 }
+
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+    outline: 0;
+    box-shadow: 0 0 7px red;
+    border: 1px solid red;
+}

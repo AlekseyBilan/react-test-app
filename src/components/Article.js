@@ -5,12 +5,10 @@ class Article extends React.Component {
     constructor(props) {
         super(props);
         this.state = {isArticleShown: true};
-        // Эта привязка обязательна для работы `this` в колбэке.
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick(e) {
-        console.log('Article E = ', e);
         this.setState(state => ({
             isArticleShown: !state.isArticleShown
         }));

@@ -1,0 +1,10 @@
+.label-count {
+    vertical-align: top;
+    line-height: 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: cadetblue;
+    font-size: 1rem;
+}
