@@ -16,6 +16,9 @@ class Article extends React.Component {
 
     render() {
         const btnText = this.state.isArticleShown ? 'Hide comment' : 'Show comment';
+        if (this.props.id === 10) {
+            throw new Error('TEST ERROR!!!');
+        }
     return (
         <article key={this.props.id} data-user-id={this.props.postId}>
             { this.state.isArticleShown ?
