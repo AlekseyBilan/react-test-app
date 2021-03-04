@@ -31,7 +31,7 @@ class UserList extends React.Component {
       <div>
         <h2 className="title">Users list</h2>
         <ThemeContext.Provider value={user}>
-          <Greeting currentUser = {this.context}/>
+          Context<Greeting currentUser = {this.context}/>
         </ThemeContext.Provider>
         
         {this.usersJsx.length > 0 ? this.usersJsx : "There is no users, yet"}
