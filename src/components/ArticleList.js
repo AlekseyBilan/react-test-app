@@ -1,12 +1,12 @@
 import React from 'react';
 import Article from './Article'
 import Button from "./Button";
+// import Greeting from "./Greeting";
 
 class ArticleList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {isToggleOn: false};
-        // Эта привязка обязательна для работы `this` в колбэке.
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -37,6 +37,7 @@ class ArticleList extends React.Component {
         return (
             <div>
                 <h2 className="title">Comments list</h2>
+                {/* <Greeting currentUser={this.props.currentUser}/> */}
                 { result }
                 <Button text={ btnText } clickHandler = {this.handleClick}/>
             </div>

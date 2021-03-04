@@ -1,24 +1,44 @@
 import "./UserList.css";
+import React from 'react';
 import User from "./User";
+import Greeting from "../Greeting";
+import {ThemeContext} from "../ThemeContext";
 
-function UserList(props) {
-  const usersJsx = props.users.map((user) => {
-    return (
-      <User
-        key={user.id}
-        id={user.id}
-        fullName={user.name}
-        userName={user.username}
-        email={user.email}
-      />
+const user = {userId: 2, userName: 'User2'};
+
+class UserList extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.usersJsx = this.props.users.map((user) => {
+      return (
+        <User
+          key={user.id}
+          id={user.id}
+          fullName={user.name}
+          userName={user.username}
+          email={user.email}
+          currentUser={props.currentUser}
+        />
+      );
+    });
+  }
+
+  static contextType = ThemeContext;
+
+  render () {
+      return (
+      <div>
+        <h2 className="title">Users list</h2>
+        <ThemeContext.Provider value={user}>
+          <Greeting currentUser = {this.context}/>
+        </ThemeContext.Provider>
+        
+        {this.usersJsx.length > 0 ? this.usersJsx : "There is no users, yet"}
+      </div>
     );
-  });
-  return (
-    <div>
-      <h2 className="title">Users list</h2>
-      {usersJsx.length > 0 ? usersJsx : "There is no users, yet"}
-    </div>
-  );
+  }
+
 }
 
 export default UserList;

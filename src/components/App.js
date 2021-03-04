@@ -7,6 +7,7 @@ import NotFound from './NotFound';
 
 const Login = lazy(() => import('./Login'));
 const UserList = lazy(() => import('./usersList/UserList'));
+//const currentUser = {userId: 12345, userName: 'User', settings: {theme: 'dark', lang: 'Eng'}};
 
 function App() {
     return (
