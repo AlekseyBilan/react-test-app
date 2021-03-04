@@ -7,14 +7,3 @@
     height: 200px;
     color: red;
 }
-
-.icon-bg {
-    width: 200px;
-    height: 200px;
-    color: green;
-    background: url(../facebook-square-brands.svg)no-repeat center / 10px 12px gold;
-}
-
-.icon-bg:hover {
-    background: url(../facebook-square-brands.svg)no-repeat center / contain red;
-}
