@@ -1,7 +1,8 @@
 import React from 'react';
-import Article from './Article'
+import Comment from './Comment'
 import Button from "./Button";
-// import Greeting from "./Greeting";
+import Toggle from "./Toggle";
+
 
 class ArticleList extends React.Component {
     constructor(props) {
@@ -16,13 +17,18 @@ class ArticleList extends React.Component {
         }));
     }
 
+//const BlogPostWithSubscription = Toggle(
+//     BlogPost,
+//     (DataSource, props) => DataSource.getBlogPost(props.id)
+//   );
+
     render() {
         let comment = null;
         const btnText = this.state.isToggleOn ? 'HIDE' : 'SHOW';
         if( this.state.isToggleOn ){
             comment = this.props.comments.map((comment) => {
                 return (
-                    <Article
+                    <Comment
                         userid={comment.id}
                         id={comment.postId}
                         fullTitle={comment.name}
@@ -37,7 +43,6 @@ class ArticleList extends React.Component {
         return (
             <div>
                 <h2 className="title">Comments list</h2>
-                {/* <Greeting currentUser={this.props.currentUser}/> */}
                 { result }
                 <Button text={ btnText } clickHandler = {this.handleClick}/>
             </div>
