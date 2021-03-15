@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import users from './users';
 import CounterWrap from './components/CounterWrap';
 import NotFound from './components/NotFound';
+import Modal from './components/Modal';
 
 const Login = lazy(() => import('./components/Login'));
 const UserList = lazy(() => import('./components/usersList/UserList'));
@@ -19,6 +20,9 @@ function App() {
             <Route path="/user-list" component={ () => <UserList users={users} />}/>
             <Route component={NotFound}/>
           </Switch>
+          <Modal className="modal" title="Error message" isModalOpen>
+            <CounterWrap/>
+          </Modal>
         </Suspense>
     </Router>
   );
