@@ -1,8 +1,9 @@
 import "./UserList.css";
 import React from 'react';
+import PropTypes from 'prop-types';
 import User from "./User";
 import Greeting from "../Greeting";
-import {ThemeContext} from "../ThemeContext";
+import { ThemeContext } from "../ThemeContext";
 
 const user = {userId: 2, userName: 'User2'};
 
@@ -38,7 +39,10 @@ class UserList extends React.Component {
       </div>
     );
   }
-
 }
+
+UserList.propTypes = {
+  users: PropTypes.any.isRequired
+};
 
 export default UserList;

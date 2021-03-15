@@ -1,4 +1,5 @@
 import './User.css';
+import PropTypes from 'prop-types';
 import comments from '../../comments';
 import ArticleList from '../ArticleList';
 
@@ -12,5 +13,14 @@ function User(props) {
         </div>
     );
 }
+
+User.propTypes = {
+    key: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
+    fullName: PropTypes.string,
+    userName: PropTypes.string.isRequired,
+    email: PropTypes.string,
+    currentUser: PropTypes.number
+  };
 
 export default User;
